@@ -4,45 +4,42 @@
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| nickname | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
+| nickname | encrypted_password | null: false |
+| email    | encrypted_password | null: false |
+| password | encrypted_password | null: false |
 | surname1    | string | null: false |
 | first_name1 | string | null: false |
 | surname2    | string | null: false |
 | first_name2 | string | null: false |
-| year  | string | null: false |
-| month | string | null: false |
-| day   | string | null: false |
+| dob         | date   | null: false |
 
 ## items テーブル
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| name   | string | null: false |
-| description | text | null: false |
-| category | string | null: false |
-| status   | string | null: false |
-| fee     | string | null: false |
-| area    | string | null: false |
-| days    | string | null: false |
-| price   | string | null: false |
-| user_id | references | foreign_key: true |
+| name_id | integer | null: false |
+| description_id | integer | null: false |
+| category_id    | integer | null: false |
+| status_id  | integer | null: false |
+| fee_id     | integer | null: false |
+| area_id    | integer | null: false |
+| days_id    | integer | null: false |
+| price_id   | integer | null: false |
+| user | references | foreign_key: true |
 
 
 ## orders テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| card_num | string | null: false |
-| month    | string | null: false |
-| year     | string | null: false |
-| sec_code | string | null: false |
-| zip_code | string | null: false |
-| prefecture | string | null: false |
-| city       | string | null: false |
-| house_num  | string | null: false |
-| building   | string |
-| phone      | string | null: false |
-| user_id    | references | foreign_key: true |
-| item_id    | references | foreign_key: true |
+| month_id    | integer | null: false |
+| year_id     | integer | null: false |
+| sec_code_id | integer | null: false |
+| zip_code_id | integer | null: false |
+| prefecture_id | integer | null: false |
+| city_id       | integer | null: false |
+| house_num_id  | integer | null: false |
+| building_id   | integer |
+| phone_id      | integer | null: false |
+| user       | references | foreign_key: true |
+| item       | references | foreign_key: true |
