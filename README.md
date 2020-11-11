@@ -13,6 +13,7 @@
 | first_name2 | string | null: false |
 | dob         | date   | null: false |
 
+
 ## items テーブル
 
 | Column | Type   | Options     |
@@ -28,18 +29,20 @@
 | user | references | foreign_key: true |
 
 
-## orders テーブル
+## shoppers テーブル
+
+| user       | references | foreign_key: true |
+| item       | references | foreign_key: true |
+
+
+## addresses テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| month_id    | integer | null: false |
-| year_id     | integer | null: false |
-| sec_code_id | integer | null: false |
 | zip_code_id | integer | null: false |
 | prefecture_id | integer | null: false |
 | city_id       | integer | null: false |
 | house_num_id  | integer | null: false |
 | building_id   | integer |
 | phone_id      | integer | null: false |
-| user       | references | foreign_key: true |
-| item       | references | foreign_key: true |
+| shopper | references | foreign_key: true |
