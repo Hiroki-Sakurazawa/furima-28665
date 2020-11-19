@@ -1,5 +1,22 @@
 <header class='second-header'>
   <%= link_to image_tag("furima-logo-color.png", class:"second-logo"), "/" %>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><a class="category-list" href="#">カテゴリー</a></li>
+      <li><a class="brand-list" href="#">ブランド</a></li>
+    </ul>
+    <% if user_signed_in? %>
+      <div class="lists-left">
+        
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
+      </div>
+    <% else %>
+      <div class="lists-left">
+        <%= link_to "ログイン", new_user_session_path, class: "login" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "sign-up" %>
+      </div>
+    <% end %>
+  </div>
 </header>
 <div class='main'>
 
