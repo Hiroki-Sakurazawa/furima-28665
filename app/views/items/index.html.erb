@@ -1,23 +1,4 @@
-<header class='second-header'>
-  <%= link_to image_tag("furima-logo-color.png", class:"second-logo"), "/" %>
-  <div class='nav'>
-    <ul class='lists-left'>
-      <li><a class="category-list" href="#">カテゴリー</a></li>
-      <li><a class="brand-list" href="#">ブランド</a></li>
-    </ul>
-    <% if user_signed_in? %>
-      <div class="lists-left">
-        <%= link_to current_user.nickname, "/", class: "user-nickname" %> 
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>  
-      </div>
-    <% else %>
-      <div class="lists-left">
-        <%= link_to "ログイン", new_user_session_path, class: "login" %>
-        <%= link_to "新規登録", new_user_registration_path, class: "sign-up" %>
-      </div>
-    <% end %>
-  </div>
-</header>
+<%= render "shared/header" %>
 <div class='main'>
 
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
@@ -203,11 +184,4 @@
   <span class='purchase-btn-text'>出品する</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
 <% end %>
-<footer class='second-fotter'>
-  <div class='second-fotter-text-wrap'>
-    <p class='second-fotter-text'>プライバシーポリシー</p>
-    <p class='second-fotter-text'>FURIMA利用規約</p>
-    <p class='second-fotter-text'>特定商取引に関する表記</p>
-  </div>
-  <%= image_tag "furima-logo-color.png", class:"second-fotter-logo"%>
-</footer>
+<%= render "shared/footer" %>
