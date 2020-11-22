@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   belongs_to :status
   belongs_to :fee
   belongs_to :area
-  belongs_to :days
+  belongs_to :day
   with_options presence: true do
     validates :name
     validates :description
