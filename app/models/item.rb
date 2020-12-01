@@ -13,7 +13,7 @@ class Item < ApplicationRecord
     validates :status_id
     validates :fee_id
     validates :area_id
-    validates :days_id
+    validates :day_id
   end
 
   with_options presence: true do
