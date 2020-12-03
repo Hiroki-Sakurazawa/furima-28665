@@ -24,6 +24,8 @@ class ItemsController < ApplicationController
     if current_user.id == item.user.id
       item.destroy
       redirect_to action: :index
+    else
+      redirect_to action: :index
     end
   end
 
