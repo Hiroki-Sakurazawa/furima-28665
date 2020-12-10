@@ -7,7 +7,6 @@ class OrdersController < ApplicationController
   def create
     @item = Item.find(params[:item_id])
     @order_address = OrderAddress.new(order_params)
-    binding.pry
     if @order_address.valid?
       user_id = current_user.id
       @order_address.save(user_id)
