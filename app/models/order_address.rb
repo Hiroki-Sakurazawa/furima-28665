@@ -12,7 +12,7 @@ class OrderAddress
   end
 
   def save
-    order.Order.create(token: token)
+    order = Order.create(token: token)
     Address.create(zip_code: zip_code, prefecture_id: prefecture_id, city: city, house_num: house_num, building: building, phone: phone)
   end
 end
