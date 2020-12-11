@@ -1,6 +1,6 @@
 class OrderAddress
   include ActiveModel::Model
-  attr_accessor :zip_code, :prefecture_id, :city, :house_num, :building, :phone, :item_id
+  attr_accessor :zip_code, :prefecture_id, :city, :house_num, :building, :phone, :item_id, :token
 
   with_options presence: true do
     validates :zip_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
