@@ -14,8 +14,7 @@ class OrdersController < ApplicationController
     @order_address = OrderAddress.new(order_params)
     if @order_address.valid?
       pay_item
-      user_id = current_user.id
-      @order_address.save(user_id)
+      @order_address.save
       redirect_to root_path
     else
       render action: :index
@@ -25,7 +24,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order_address).permit(:zip_code, :prefecture_id, :city, :house_num, :building, :phone).merge(item_id: @item.id, token: params[:token])
+    params.require(:order_address).permit(:zip_code, :prefecture_id, :city, :house_num, :building, :phone).merge(item_id: @item.id, token: params[:token], user_id: current_user.id)
   end
 
   def pay_item
