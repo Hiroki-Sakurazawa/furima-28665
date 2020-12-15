@@ -49,12 +49,12 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include('Prefecture must be other than 1')
       end
       it 'phoneにハイフンがあると登録ができない' do
-        @order_address.phone = 111-111-111
+        @order_address.phone = "111-111-111"
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('Phone is invalid')
       end
       it 'phoneが11桁を超えると登録ができない' do
-        @order_address.phone = 111_111_111_111
+        @order_address.phone = "111_111_111_111"
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('Phone is invalid')
       end
