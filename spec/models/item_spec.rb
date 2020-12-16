@@ -84,10 +84,10 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Area must be other than 1')
       end
-      it 'daysが1では登録できない' do
-        @item.days_id = 1
+      it 'dayが1では登録できない' do
+        @item.day_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Days must be other than 1')
+        expect(@item.errors.full_messages).to include('Day must be other than 1')
       end
       it 'userが紐づいていないと登録できない' do
         @item.user = nil

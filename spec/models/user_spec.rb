@@ -117,16 +117,6 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
-      it 'surname1にカタカナがあると登録できない' do
-        @user.surname1 = 'テスト'
-        @user.valid?
-        expect(@user.errors.full_messages).to include('Surname1 is invalid')
-      end
-      it 'first_name1にカタカナがあると登録できない' do
-        @user.first_name1 = 'テスト'
-        @user.valid?
-        expect(@user.errors.full_messages).to include('First name1 is invalid')
-      end
       it 'surname2に漢字があると登録できない' do
         @user.surname2 = '試験'
         @user.valid?
