@@ -160,18 +160,11 @@
       <% if @items.length == 0 %>
       <li class='list'>
         <%= link_to '#' do %>
-        <%= image_tag "omelet.png", class: "item-img" %>
+        <%= image_tag "sorry.png", class: "item-img" %>
         <div class='item-info'>
           <h3 class='item-name'>
-            商品を出品してね！
+            ご希望の商品はございませんでした。
           </h3>
-          <div class='item-price'>
-            <span>99999999円<br>(税込み)</span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
-          </div>
         </div>
         <% end %>
       </li>
