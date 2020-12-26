@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :show, :search, :lady, :man, :baby, :interior, :book, :toy, :camera, :sport, :handmade, :other]
   before_action :set_item, only: [:show, :edit, :update]
 
   def index
@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    redirect_to action: :index unless current_user.id == @item.user.id && @item.order == nil
+    redirect_to action: :index unless current_user.id == @item.user.id && @item.order.nil?
   end
 
   def update
@@ -47,6 +47,46 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.search(params[:keyword])
+  end
+
+  def lady
+    @items = Item.where(category_id: 2)
+  end
+
+  def man
+    @items = Item.where(category_id: 3)
+  end
+
+  def baby
+    @items = Item.where(category_id: 4)
+  end
+
+  def interior
+    @items = Item.where(category_id: 5)
+  end
+
+  def book
+    @items = Item.where(category_id: 6)
+  end
+
+  def toy
+    @items = Item.where(category_id: 7)
+  end
+
+  def camera
+    @items = Item.where(category_id: 8)
+  end
+
+  def sport
+    @items = Item.where(category_id: 9)
+  end
+
+  def handmade
+    @items = Item.where(category_id: 10)
+  end
+
+  def other
+    @items = Item.where(category_id: 11)
   end
 
   private

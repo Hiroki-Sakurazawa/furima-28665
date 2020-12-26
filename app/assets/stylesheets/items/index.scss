@@ -308,4 +308,17 @@ a {
   font-size: 2vh;
 }
 
+.show-lists{
+  width: 200px;
+  position: absolute;
+  left: 300px;
+  top: 120px;
+  background-color: rgb(233, 233, 233);
+  font-size: 15px;
+}
+
+.hidden{
+  display: none;
+}
+
 /* //商品一覧 */

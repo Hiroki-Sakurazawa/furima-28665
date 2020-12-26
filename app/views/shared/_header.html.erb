@@ -11,7 +11,7 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
+      <li><%= link_to 'カテゴリー', "#", class: "category-list", id: "category-list" %></li>
       <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
@@ -24,4 +24,16 @@
       <% end %>
     </ul>
   </div>
+  <ul class="show-lists hidden" id="pull-down">
+  <li id="lady"><%= link_to '&nbsp;レディース'.html_safe, lady_items_path, class: "brand-list" %></li>
+  <li id="man"><%= link_to '&nbsp;メンズ'.html_safe, man_items_path, class: "brand-list" %></li>
+  <li id="baby"><%= link_to '&nbsp;ベビー・キッズ'.html_safe, baby_items_path, class: "brand-list" %></li>
+  <li id="interior"><%= link_to '&nbsp;インテリア・住まい・小物'.html_safe, interior_items_path, class: "brand-list" %></li>
+  <li id="book"><%= link_to '&nbsp;本・音楽・ゲーム'.html_safe, book_items_path, class: "brand-list" %></li>
+  <li id="toy"><%= link_to '&nbsp;おもちゃ・ホビー・グッズ'.html_safe, toy_items_path, class: "brand-list" %></li>
+  <li id="camera"><%= link_to '&nbsp;家電・スマホ・カメラ'.html_safe, camera_items_path, class: "brand-list" %></li>
+  <li id="sport"><%= link_to '&nbsp;スポーツ・レジャー'.html_safe, sport_items_path, class: "brand-list" %></li>
+  <li id="handmade"><%= link_to '&nbsp;ハンドメイド'.html_safe, handmade_items_path, class: "brand-list" %></li>
+  <li id="other"><%= link_to '&nbsp;その他'.html_safe, other_items_path, class: "brand-list" %></li>
+  </ul>
 </header>
